@@ -67,3 +67,6 @@
 [submodule "packstack/puppet/modules/quantum"]
 	path = packstack/puppet/modules/quantum
 	url = https://github.com/stackforge/puppet-quantum.git
+[submodule "packstack/puppet/modules/heat"]
+	path = packstack/puppet/modules/heat
+	url = https://github.com/packstack/puppet-heat.git
