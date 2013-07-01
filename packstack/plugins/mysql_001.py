@@ -100,5 +100,7 @@ def createmanifest(config):
         append_for("glance")
     if controller.CONF['CONFIG_QUANTUM_INSTALL'] == 'y':
         append_for("quantum")
+    if controller.CONF['CONFIG_HEAT_INSTALL' ] == 'y':
+        append_for("heat")
 
     appendManifestFile(manifestfile, "\n".join(manifestdata), 'pre')
