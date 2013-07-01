@@ -13,6 +13,7 @@ from packstack.modules.ospluginutils import (getManifestTemplate,
                                              manifestfiles,
                                              appendManifestFile)
 
+controller = None
 
 # Plugin name
 PLUGIN_NAME = "OS-HEAT"
@@ -21,7 +22,9 @@ PLUGIN_NAME_COLORED = utils.color_text(PLUGIN_NAME, 'blue')
 logging.debug("plugin %s loaded", __name__)
 
 
-def initConfig(controller):
+def initConfig(controllerObject):
+    global controller
+    controller = controllerObject
     logging.debug("Adding OpenStack Heat configuration")
     parameters = [
         {"CMD_OPTION": "heat-host",
