@@ -2,13 +2,17 @@
 Installs and configures heat
 """
 
+import uuid
 import logging
+import os
 
 from packstack.installer import utils
 from packstack.installer import validators
 
 from packstack.modules.ospluginutils import (getManifestTemplate,
+                                             manifestfiles,
                                              appendManifestFile)
+
 
 # Plugin name
 PLUGIN_NAME = "OS-HEAT"
@@ -32,6 +36,19 @@ def initConfig(controller):
          "CONF_NAME"       : "CONFIG_HEAT_HOST",
          "USE_DEFAULT"     : False,
          "NEED_CONFIRM"    : False,
+         "CONDITION"       : False },
+
+	{"CMD_OPTION": "heat-mysql-password",
+	 "USAGE"	: 'The password used by heat user to authenticate against MySQL',
+         "PROMPT"          : "Enter the password for the heat MySQL access",
+         "OPTION_LIST"     : [],
+         "VALIDATORS"      : [validators.validate_not_empty],
+         "DEFAULT_VALUE"   : uuid.uuid4().hex[:16],
+         "MASK_INPUT"      : True,
+         "LOOSE_VALIDATION": False,
+         "CONF_NAME"       : "CONFIG_MYSQL_HEAT_PW",
+         "USE_DEFAULT"     : True,
+         "NEED_CONFIRM"    : True,
          "CONDITION"       : False },
     ]
 
