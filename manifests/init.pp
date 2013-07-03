@@ -23,6 +23,7 @@
 #  [*rabbit_virtualhost*]
 #    virtualhost to use. Optional. Defaults to '/'
 #
+
 class heat(
   $package_ensure     = 'present',
   $verbose            = 'False',
@@ -38,12 +39,12 @@ class heat(
   include heat::params
 
   File {
-    require => Package['heat-common'],
+    require => Package[heat-common],
   }
 
   group { 'heat':
     name    => 'heat',
-    require => Package['heat-common'],
+    require => Package[heat-common],
   }
 
   user { 'heat':
@@ -51,7 +52,7 @@ class heat(
     gid     => 'heat',
     groups  => ['heat'],
     system  => true,
-    require => Package['heat-common'],
+    require => Package[heat-common],
   }
 
   file { '/etc/heat/':
@@ -66,6 +67,6 @@ class heat(
     name   => $::heat::params::common_package_name,
   }
 
-#  Package['heat-common'] -> Heat_config<||>
+#  Package[heat-common] -> Heat_config<||>
 
 }
