@@ -306,7 +306,7 @@ def initSequences(controller):
         {'title': 'Adding Quantum DHCP Agent manifest entries', 'functions':[createDHCPManifests]},
         {'title': 'Adding Quantum Metadata Agent manifest entries', 'functions':[createMetadataManifests]},
     ]
-    controller.addSequence("Installing OpenStack Quantum", [], [], quantum_steps)
+    controller.addSequence("Installing OpenStack Networking (Quantum)", [], [], quantum_steps)
 
 
 def createManifest(config):
