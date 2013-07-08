@@ -293,7 +293,7 @@ def initSequences(controller):
     else:
         novaapisteps.append({'title': 'Adding Nova Network manifest entries', 'functions':[createnetworkmanifest]})
 
-    controller.addSequence("Installing OpenStack Nova API", [], [], novaapisteps)
+    controller.addSequence("Installing OpenStack Compute (Nova) API", [], [], novaapisteps)
 
 
 def createapimanifest(config):
