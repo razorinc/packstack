@@ -134,7 +134,7 @@ def initSequences(controller):
              {'title': 'Checking if the Cinder server has a cinder-volumes vg', 'functions':[check_cinder_vg]},
              {'title': 'Adding Cinder manifest entries', 'functions':[create_manifest]}
     ]
-    controller.addSequence("Installing OpenStack Cinder", [], [], cinder_steps)
+    controller.addSequence("Installing OpenStack Block Storage (Cinder)", [], [], cinder_steps)
 
 def install_cinder_deps(config):
     server = utils.ScriptRunner(controller.CONF['CONFIG_CINDER_HOST'])
