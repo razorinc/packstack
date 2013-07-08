@@ -106,7 +106,7 @@ def initSequences(controller):
     steps = [
              {'title': 'Adding Horizon manifest entries', 'functions': [createmanifest]}
     ]
-    controller.addSequence("Installing OpenStack Horizon", [], [], steps)
+    controller.addSequence("Installing OpenStack Dashboard (Horizon)", [], [], steps)
 
 
 def createmanifest(config):
