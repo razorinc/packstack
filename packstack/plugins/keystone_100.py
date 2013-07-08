@@ -102,7 +102,7 @@ def initSequences(controller):
     keystonesteps = [
              {'title': 'Adding Keystone manifest entries', 'functions':[createmanifest]}
     ]
-    controller.addSequence("Installing OpenStack Keystone", [], [], keystonesteps)
+    controller.addSequence("Installing OpenStack Identity Service (Keystone)", [], [], keystonesteps)
 
 def createmanifest(config):
     manifestfile = "%s_keystone.pp"%controller.CONF['CONFIG_KEYSTONE_HOST']
