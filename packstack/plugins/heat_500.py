@@ -27,7 +27,7 @@ def initConfig(controllerObject):
     controller = controllerObject
     logging.debug("Adding OpenStack Heat configuration")
     parameters = [
-        {"CMD_OPTION": "heat-host",
+        {"CMD_OPTION"      : "heat-host",
          "USAGE"           : ('The IP address of the server on which '
                               'to install Heat service'),
          "PROMPT"          : 'Enter the IP address of the Heat server',
@@ -40,10 +40,9 @@ def initConfig(controllerObject):
          "USE_DEFAULT"     : False,
          "NEED_CONFIRM"    : False,
          "CONDITION"       : False },
-
-	{"CMD_OPTION": "heat-mysql-password",
-	 "USAGE"	: 'The password used by heat user to authenticate against MySQL',
-         "PROMPT"          : "Enter the password for the heat MySQL user",
+	{"CMD_OPTION"      : "heat-mysql-password",
+	 "USAGE"	   : 'The password used by Heat user to authenticate against MySQL',
+         "PROMPT"          : "Enter the password for the Heat MySQL user",
          "OPTION_LIST"     : [],
          "VALIDATORS"      : [validators.validate_not_empty],
          "DEFAULT_VALUE"   : uuid.uuid4().hex[:16],
@@ -53,7 +52,19 @@ def initConfig(controllerObject):
          "USE_DEFAULT"     : True,
          "NEED_CONFIRM"    : True,
          "CONDITION"       : False },
-    ]
+        {"CMD_OPTION"      : "heat-ks-passwd",
+         "USAGE"           : "The password to use for the Heat to authenticate with Keystone",
+         "PROMPT"          : "Enter the password for the Heat Keystone access",
+         "OPTION_LIST"     : [],
+         "VALIDATORS"      : [validators.validate_not_empty],
+         "DEFAULT_VALUE"   : uuid.uuid4().hex[:16],
+         "MASK_INPUT"      : True,
+         "LOOSE_VALIDATION": False,
+         "CONF_NAME"       : "CONFIG_HEAT_KS_PW",
+         "USE_DEFAULT"     : True,
+         "NEED_CONFIRM"    : True,
+         "CONDITION"       : False },
+        ]
 
     group = {"GROUP_NAME"          : "Heat",
              "DESCRIPTION"         : "Heat Config parameters",
