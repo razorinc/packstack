@@ -85,7 +85,7 @@ def initSequences(controller):
              {'title': 'Adding Glance Keystone manifest entries', 'functions':[createkeystonemanifest]},
              {'title': 'Adding Glance manifest entries', 'functions':[createmanifest]}
     ]
-    controller.addSequence("Installing OpenStack Glance", [], [], glancesteps)
+    controller.addSequence("Installing OpenStack Image Service (Glance)", [], [], glancesteps)
 
 def createkeystonemanifest(config):
     manifestfile = "%s_keystone.pp" % controller.CONF['CONFIG_KEYSTONE_HOST']
