@@ -127,7 +127,7 @@ def initSequences(controller):
              {'title': 'Adding Swift storage manifest entries', 'functions':[createstoragemanifest]},
              {'title': 'Adding Swift common manifest entries', 'functions':[createcommonmanifest]},
     ]
-    controller.addSequence("Installing OpenStack Swift", [], [], steps)
+    controller.addSequence("Installing OpenStack Object Storage (Swift)", [], [], steps)
 
 
 def createkeystonemanifest(config):
