@@ -72,7 +72,7 @@ def initSequences(controller):
              {'title': 'Adding Nagios server manifest entries', 'functions':[createmanifest]},
              {'title': 'Adding Nagios host manifest entries', 'functions':[createnrpemanifests]}
     ]
-    controller.addSequence("Installing Nagios", [], [], nagiossteps)
+    controller.addSequence("Installing Monitoring System (Nagios)", [], [], nagiossteps)
 
 
 def _serviceentry(**kwargs):
