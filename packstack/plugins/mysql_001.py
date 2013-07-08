@@ -78,7 +78,7 @@ def initSequences(controller):
              {'title': 'Adding MySQL manifest entries',
               'functions':[createmanifest]}
     ]
-    controller.addSequence("Installing MySQL", [], [], mysqlsteps)
+    controller.addSequence("Installing Database (MySQL)", [], [], mysqlsteps)
 
 
 def createmanifest(config):

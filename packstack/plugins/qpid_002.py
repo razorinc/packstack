@@ -55,7 +55,7 @@ def initSequences(controller):
     qpidsteps = [
              {'title': 'Adding QPID manifest entries', 'functions':[createmanifest]}
     ]
-    controller.addSequence("Installing QPID", [], [], qpidsteps)
+    controller.addSequence("Installing Messaging System (QPID)", [], [], qpidsteps)
 
 def createmanifest(config):
     manifestfile = "%s_qpid.pp"%controller.CONF['CONFIG_QPID_HOST']
